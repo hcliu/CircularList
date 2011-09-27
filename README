@@ -6,7 +6,7 @@ A circular list data structure for Ruby.
 How to install
 --------------
 
-gem install circular list
+gem install circular_list
 
 OR
 
