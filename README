@@ -1,0 +1,34 @@
+Circular List
+=============
+
+A circular list data structure for Ruby.
+
+How to install
+--------------
+
+gem install circular list
+
+OR
+
+gem 'circular_list'  in Gemfile
+
+
+How to use
+----------
+
+require 'rubygems'
+require 'circular_list'
+
+c = CircularList::List.new([1,2,3])
+c.fetch_next   => 2
+c.fetch_next   => 3
+c.fetch_next   => 1
+c.fetch_next   => 2
+
+c = CircularList::List.new([1,2,3])
+c.fetch_previous   => 3
+c.fetch_previous   => 2
+c.fetch_previous   => 1
+c.fetch_previous   => 3
+
+See specs https://github.com/bangthetable/CircularList/blob/master/spec/circular_list/list_spec.rb for more examples.
