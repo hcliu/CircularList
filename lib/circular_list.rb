@@ -11,11 +11,19 @@ module CircularList
     end
 
     def fetch_previous(index=0)
-      @arr.unshift(@arr.pop)[index]
+      index.nil? ? nil : @arr.unshift(@arr.pop)[index]
     end
 
     def fetch_next(index=0)
-      @arr.push(@arr.shift)[index]
+      index.nil? ? nil : @arr.push(@arr.shift)[index]
+    end
+    
+    def fetch_after(e)
+      fetch_next(@arr.index(e))
+    end
+    
+    def fetch_before(e)
+      fetch_previous(@arr.index(e))
     end
   end
 end
