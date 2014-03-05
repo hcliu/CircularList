@@ -2,6 +2,16 @@ require 'spec_helper'
 
 module CircularList
   describe List do
+
+    describe '#list' do
+      it 'returns the elements in the array' do
+        c = List.new([1,2,3,4])
+        expect(c.list).to eql([1,2,3,4])
+        c.fetch_next
+        expect(c.list).to eql([2,3,4,1])
+      end
+    end
+
     context "when array is empty" do
       it "fetch_next should return nil" do
         List.new([]).fetch_next.should eq nil

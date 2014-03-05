@@ -3,27 +3,31 @@ require "circular_list/version"
 module CircularList
   class List
     def initialize(array)
-      @arr = array
+      @array = array
     end
 
     def size
-      @arr.size
+      @array.size
+    end
+
+    def list
+      @array
     end
 
     def fetch_previous(index=0)
-      index.nil? ? nil : @arr.unshift(@arr.pop)[index]
+      index.nil? ? nil : @array.unshift(@array.pop)[index]
     end
 
     def fetch_next(index=0)
-      index.nil? ? nil : @arr.push(@arr.shift)[index]
+      index.nil? ? nil : @array.push(@array.shift)[index]
     end
     
     def fetch_after(e)
-      fetch_next(@arr.index(e))
+      fetch_next(@array.index(e))
     end
     
     def fetch_before(e)
-      fetch_previous(@arr.index(e))
+      fetch_previous(@array.index(e))
     end
   end
 end
